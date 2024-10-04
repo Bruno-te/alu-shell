@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ "$(stat -c "%U" hello)" = "guillaume" ] fi
+if [ "$(stat -c "%U" hello)" = "vincent" ] fi
