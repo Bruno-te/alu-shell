@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1t | grep '^-' | head -n 10
+ls -t | grep -v '/$' | head -n 10
