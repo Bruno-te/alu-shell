@@ -4,14 +4,16 @@ PID_FILE="/var/run/my_process.pid"
 SCRIPT_PATH="$(dirname "$(realpath "$0")")/manage_my_process"
 
 start() {
+    echo "Checking if process is already running..."
     if [ -f "$PID_FILE" ]; then
         echo "manage_my_process is already running."
         return
     fi
     
+    echo "Starting manage_my_process..."
     $SCRIPT_PATH &
     echo $! > "$PID_FILE"
-    echo "manage_my_process started"
+    echo "manage_my_process started with PID $(cat $PID_FILE)"
 }
 
 stop() {
@@ -44,4 +46,3 @@ case "$1" in
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
-
