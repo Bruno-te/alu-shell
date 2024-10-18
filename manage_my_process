@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Starting manage_my_process..."
+
+# Infinite loop to write "I am alive!" to the file
+while true; do
+    echo "I am alive!" >> /tmp/my_process
+    echo "Wrote to /tmp/my_process"
+    sleep 2
+done
